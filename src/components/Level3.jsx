@@ -1,7 +1,8 @@
+import { useSelector } from "react-redux";
 import Level4 from "./Level4";
 
 export default function Level3() {
-  const value = "here 3";
+  const value = useSelector((state) => state.getValue.value);
   return (
     <div
       style={{

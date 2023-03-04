@@ -1,7 +1,7 @@
-import Level3 from './Level3';
-
+import Level3 from "./Level3";
+import { useSelector } from "react-redux";
 export default function Level2() {
-  const value = "here 2";
+  const value = useSelector((state) => state.getValue.value);
   return (
     <div
       style={{

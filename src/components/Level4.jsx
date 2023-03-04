@@ -1,14 +1,21 @@
 import { useState, useRef } from "react";
-
+import { useDispatch } from "react-redux";
+import { provideValueAction } from "../redux/reducers/getValueReducer";
 
 export default function Level4() {
+  const dispatch = useDispatch();
+
   const [value, setValue] = useState("to be updated...");
   const inputRef = useRef();
 
   const clickHandler = (e) => {
     e.preventDefault();
-
     setValue(inputRef.current.value);
+    dispatch(
+      provideValueAction({
+        updatedValue: inputRef.current.value,
+      })
+    );
   };
 
   return (
